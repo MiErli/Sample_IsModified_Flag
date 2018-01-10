@@ -1,9 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.DXErrorProvider;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
+﻿using DevExpress.XtraEditors.DXErrorProvider;
 using System.Windows.Forms;
 
 namespace T576282
@@ -29,16 +24,16 @@ namespace T576282
             //dxValidationProvider1.SetValidationRule(comboBoxEditCategory, customValidationRule);
         }
 
-        private void InitializeBindings()
+        private async void InitializeBindings()
         {
-            _bindingSource.DataSource = SimpleDataSource.GetTestData();
+            _bindingSource.DataSource = await SimpleDataSource.GetTestData();
             textEditName.DataBindings.Add(new Binding(nameof(textEditName.Text), _bindingSource, nameof(SimpleDataSource.SimpleData.Name)));
             comboBoxEditCategory.DataBindings.Add(new Binding(nameof(comboBoxEditCategory.EditValue), _bindingSource, nameof(SimpleDataSource.SimpleData.Category)));
         }
 
-        private void FillCombobox()
+        private async void FillCombobox()
         {
-            foreach (var item in SimpleDataSource.GetTestData(4))
+            foreach (var item in await SimpleDataSource.GetTestData(4))
                 comboBoxEditCategory.Properties.Items.Add(item.Category);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace T576282
 {
@@ -15,7 +16,7 @@ namespace T576282
             Category = "String " + (pInt % 4).ToString();
         }
 
-        public static BindingList<SimpleData> GetTestData(int count = 100)
+        public static async Task<BindingList<SimpleData>> GetTestData(int count = 100)
         {
             BindingList<SimpleData> testDataList = new BindingList<SimpleData>();
             for (int i = 0; i < count; i++)

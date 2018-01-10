@@ -21,8 +21,9 @@ namespace T576282
 
 
 
-        private void DialogForm_Load(object sender, EventArgs e)
+        private async void DialogForm_Load(object sender, EventArgs e)
         {
+            
             FormClosing += DialogForm_FormClosing;
             btnOK.Click += BtnOK_Click;
         }
