@@ -33,6 +33,14 @@ namespace T576282
                 controlsWithUpdatedValues.Add(edit);
         }
 
+        public bool IsModified()
+        {
+            if (controlsWithUpdatedValues.Count <= 0)
+                return false;
+            else
+                return true;
+        }
+
         private void UserControlNerpaBase_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (controlsWithUpdatedValues.Count == 0)
