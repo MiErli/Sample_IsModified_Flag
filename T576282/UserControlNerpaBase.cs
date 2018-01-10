@@ -21,7 +21,7 @@ namespace T576282
                 return;
 
             new ControlPatcher<BaseEdit>((edit) => edit.Validating += Edit_Validating).ProcessContainer(this);
-            this.FindForm().FormClosing += UserControlNerpaBase_FormClosing;
+          //  this.FindForm().FormClosing += UserControlNerpaBase_FormClosing;
         }
 
         List<Control> controlsWithUpdatedValues = new List<Control>();

@@ -8,21 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace T576282 {
-    public partial class DialogForm : Form {
-        public DialogForm() {
+namespace T576282
+{
+    public partial class DialogForm : Form
+    {
+        public DialogForm()
+        {
             InitializeComponent();
 
-            this.FormClosed += DialogForm_FormClosed;
 
         }
 
-        private void DialogForm_FormClosed(object sender, FormClosedEventArgs e) {
-            //
-        }
-         
-        
-        
+
+
         private void DialogForm_Load(object sender, EventArgs e)
         {
             FormClosing += DialogForm_FormClosing;
@@ -46,6 +44,13 @@ namespace T576282 {
 
                     if (res == DialogResult.Cancel)
                         e.Cancel = true;
+                    else if( res == DialogResult.No )
+                    { }
+                    else
+                    {
+                        // Save
+                        DialogResult = DialogResult.OK;
+                    }
                 }
             }
 
